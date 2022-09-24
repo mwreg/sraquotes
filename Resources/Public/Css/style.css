@@ -1,0 +1,133 @@
+html, body {
+  position: relative;
+  /*background-color:$darkGray;*/
+  background-color: white;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body, * {
+  box-sizing: border-box !important;
+}
+
+* {
+  position: relative;
+}
+
+/******************
+ *     Colors     *
+******************/
+/* Quote category */
+/******************
+ *     Style      *
+******************/
+/* Quote outer wrapper*/
+/* Quotation mark */
+/* Quote border */
+/* Quote */
+#quotes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.quote-outer-wrapper {
+  position: relative;
+  width: 620px;
+  background-color: transparent;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transition: 0.4s;
+  text-align: center;
+  margin: 50px 0;
+  cursor: default;
+}
+.quote-outer-wrapper .quotation-mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  height: 30px;
+  width: 30px;
+  line-height: 30px !important;
+  background-color: #780821;
+  color: white;
+}
+.quote-outer-wrapper .qm-2 {
+  position: absolute;
+  bottom: -39px;
+  right: 36px;
+  z-index: 1;
+}
+.quote-outer-wrapper > .quote {
+  background-color: rgba(78, 78, 78, 0.95);
+  transition: 0.4s;
+  padding: 36px calc( 36px + 10px );
+}
+.quote-outer-wrapper > .quote .qm-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.quote-outer-wrapper > .quote div {
+  margin: 0 !important;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  transition: height 0.2s linear;
+  overflow: hidden;
+}
+.quote-outer-wrapper > .quote div#quote-text {
+  visibility: visible;
+}
+.quote-outer-wrapper div#quote-category {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  bottom: -36px;
+  right: calc( 36px + 4px );
+  width: 0;
+  height: calc( 30px - 4px );
+  overflow: hidden;
+  padding-right: 0;
+  transition: all 0.2s linear;
+  white-space: nowrap;
+  color: #212121;
+}
+.quote-outer-wrapper:before, .quote-outer-wrapper:after {
+  content: "";
+  position: absolute;
+  top: calc( -39px );
+  left: 36px;
+  width: calc( 100% - 36px * 2 );
+  height: calc( 100% + 39px * 2 );
+  background: transparent;
+  box-sizing: border-box;
+}
+.quote-outer-wrapper:before {
+  border-top: 4px solid #780821;
+  border-left: 4px solid #780821;
+}
+.quote-outer-wrapper:after {
+  border-bottom: 4px solid #780821;
+  border-right: 4px solid #780821;
+}
+.quote-outer-wrapper:hover {
+  transform: rotateY(-20deg) skewY(3deg);
+}
+.quote-outer-wrapper:hover .quote {
+  transform: rotateY(20deg) skewY(-3deg);
+}
+.quote-outer-wrapper:hover div#quote-category {
+  padding-right: calc( 30px * 1.2 );
+  width: calc( 100% - 2 * 36px - 2 * 4px );
+}
+.quote-outer-wrapper:hover .qm-2::before {
+  content: "\f02b";
+}
+
+/*# sourceMappingURL=style.css.map */

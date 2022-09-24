@@ -1,0 +1,2 @@
+# cat=basic/enable; type=string; label=Quotes API Token : You have to enter the Stämpfli quote api Token here. You can get it from https://remoteassessment.staempflidev.com/user/api-tokens.
+  quoteApiToken =

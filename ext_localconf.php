@@ -6,11 +6,11 @@ call_user_func(static function() {
         'Sraquotes',
         'Plstraquotes',
         [
-            \Mwreg\Sraquotes\Controller\QuoteController::class => 'index'
+            \Mwreg\Sraquotes\Controller\QuoteController::class => 'index, multipleQuotesAction'
         ],
         // non-cacheable actions
         [
-            
+            \Mwreg\Sraquotes\Controller\QuoteController::class => 'index, multipleQuotesAction'
         ]
     );
 

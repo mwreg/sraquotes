@@ -1,0 +1,23 @@
+<f:layout name="Default" />
+
+
+<f:section name="content">
+
+    <f:comment>Check if we received quotes. If we don't receive any quotes, we alert a message</f:comment>
+    <f:if condition="{f:count(subject: quotes)} > 0">
+        <f:then>
+            <f:for each="{quotes}" as="quote">
+                <f:render partial="SingleQuote" arguments="{quote:quote}" />
+            </f:for>
+        </f:then>
+
+        <f:else>
+            <div class="alert alert-info">
+                <div class="mb-1">Keine Zitate gefunden, versuchen sie es bitte erneut.</div>
+            </div>
+        </f:else>
+    </f:if>
+
+    <f:flashMessages />
+
+</f:section>

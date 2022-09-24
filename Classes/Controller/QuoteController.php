@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-//        Vendor\ExtensionKey\Controller
 namespace Mwreg\Sraquotes\Controller;
-
 
 use Mwreg\Sraquotes\Domain\Model\Quote;
 
@@ -23,13 +21,40 @@ use Mwreg\Sraquotes\Domain\Model\Quote;
  */
 class QuoteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+
     /**
-     * action index
+     * Get single quote from Stämpfli AG quote database, using their API.
+     *
+     * @return string|object|null|void
      */
     public function indexAction()
     {
+        // Create new quote object
         $quote = new Quote;
 
-        return $quote->index();
+        // Get single quote
+        $quote->setRandomQuotes( 1 );
+
+        // Pass quotes (containing one quote) to the template
+        $this->view->assign( 'quotes' , $quote->getQuotes() );
+        $this->view->assign( 'extConfig' , $quote->getExtensionConfiguration() );
+    }
+
+    /**
+     * Get multiple quotes from Stämpfli AG quote database, using their API.
+     *
+     * @return string|object|null|void
+     */
+    public function multipleQuotesAction()
+    {
+        // Create new quote object
+        $quote = new Quote;
+
+        // Get multiple quotes
+        $quote->setRandomQuotes( 3 );
+
+        // Pass quotes to the template
+        $this->view->assign( 'quotes' , $quote->getQuotes() );
+        $this->view->assign( 'extConfig' , $quote->getExtensionConfiguration() );
     }
 }
