@@ -1,0 +1,14 @@
+plugin.tx_sraquotes_plstraquotes {
+    view {
+        # cat=plugin.tx_sraquotes_plstraquotes/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:sraquotes/Resources/Private/Templates/
+        # cat=plugin.tx_sraquotes_plstraquotes/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:sraquotes/Resources/Private/Partials/
+        # cat=plugin.tx_sraquotes_plstraquotes/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:sraquotes/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_sraquotes_plstraquotes//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

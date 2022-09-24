@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:sraquotes/Resources/Private/Language/locallang_db" date="2022-09-24T11:45:55Z" product-name="sraquotes">
+		<header/>
+		<body>
+			<trans-unit id="tx_sraquotes_plstraquotes.name" resname="tx_sraquotes_plstraquotes.name">
+				<source>Random Quotes Plugin</source>
+			</trans-unit>
+			<trans-unit id="tx_sraquotes_plstraquotes.description" resname="tx_sraquotes_plstraquotes.description">
+				<source>Get quotes from external quote database (from Stämpfli AG) using their api.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

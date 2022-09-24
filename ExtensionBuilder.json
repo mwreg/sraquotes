@@ -1,0 +1,50 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Get quotes from external quote database (from St\u00e4mpfli AG) using their api.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 10.4.0-10.4.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "generateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "10.4.0-10.4.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "sraquotes",
+        "name": "Random Quotes",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "2108",
+                "email": "mwreg@outlook.com",
+                "name": "Marc Wampfler",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Quote=>index",
+                    "noncacheableActions": ""
+                },
+                "description": "Get quotes from external quote database (from St\u00e4mpfli AG) using their api.",
+                "key": "plstraquotes",
+                "name": "Random Quotes Plugin"
+            }
+        ],
+        "vendorName": "Mwreg"
+    },
+    "wires": [],
+    "storagePath": "D:\/xampp_7_2_34\/htdocs\/staempfli\/raQuote\/packages\/",
+    "log": {
+        "last_modified": "2022-09-24 11:45",
+        "extension_builder_version": "10.0.0",
+        "be_user": " (1)"
+    }
+}
