@@ -21,7 +21,7 @@ $quoteCategoryFontColor:#212121;
 ******************/
 /* Quote outer wrapper*/
 $quoteOuterWrapperMargin:50px;
-$quoteOuterWrapperWidth:620px;
+$quoteOuterWrapperMaxWidth:620px;
 
 /* Quotation mark */
 $quotationMarkOuterSize:30px; // Should be an even integer
@@ -48,11 +48,25 @@ $quoteFontSize:1em;
     justify-content: center;
     align-items: center;
     background-color: white;
+
+    #next-quote-btn{
+        min-width:180px;
+        min-height:35px;
+
+        #next-quote-btn-spinner{
+            display:none;
+        }
+
+        &:active{
+            box-shadow: none!important;
+        }
+    }
 }
 
 .quote-outer-wrapper {
     position: relative;
-    width:$quoteOuterWrapperWidth;
+    max-width:$quoteOuterWrapperMaxWidth;
+    width:100%;
     background-color: transparent;
     transform-style: preserve-3d;
     perspective: 2000px;
@@ -60,7 +74,6 @@ $quoteFontSize:1em;
     text-align: center;
     margin:$quoteOuterWrapperMargin 0;
     cursor: default;
-
 
     .quotation-mark {
         display: flex;

@@ -41,6 +41,23 @@ class QuoteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     }
 
     /**
+     * Get single quote from Stämpfli AG quote database, using their API.
+     * Returns a JSON string containing the quote
+     *
+     * @return string
+     */
+    public function ajaxGetQuoteAction()
+    {
+        // Create new quote object
+        $quote = new Quote;
+
+        // Get single quote
+        $quote->setRandomQuotes( 1 );
+
+        return json_encode($quote->getQuotes()) ;
+    }
+
+    /**
      * Get multiple quotes from Stämpfli AG quote database, using their API.
      *
      * @return string|object|null|void

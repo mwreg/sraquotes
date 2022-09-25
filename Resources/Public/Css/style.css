@@ -32,10 +32,21 @@ body, * {
   align-items: center;
   background-color: white;
 }
+#quotes #next-quote-btn {
+  min-width: 180px;
+  min-height: 35px;
+}
+#quotes #next-quote-btn #next-quote-btn-spinner {
+  display: none;
+}
+#quotes #next-quote-btn:active {
+  box-shadow: none !important;
+}
 
 .quote-outer-wrapper {
   position: relative;
-  width: 620px;
+  max-width: 620px;
+  width: 100%;
   background-color: transparent;
   transform-style: preserve-3d;
   perspective: 2000px;

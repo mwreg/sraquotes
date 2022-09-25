@@ -23,36 +23,27 @@ plugin.tx_sraquotes_plstraquotes {
     }
 }
 
-# these classes are only used in auto-generated templates
-plugin.tx_sraquotes._CSS_DEFAULT_STYLE (
-    textarea.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
+
+
+ajaxRequest = PAGE
+ajaxRequest {
+    typeNum = 2108
+
+    config {
+         disableAllHeaderCode = 1
+         additionalHeaders = Content-type:text/html # or application/json, or...
+         xhtml_cleaning = 0
+         admPanel = 0 # suppress Typo3 from adding anything unwanted
+         debug = 0 # suppress Typo3 from adding anything unwanted
+         no_cache = 1 # control if the output should be cachable
     }
 
-    input.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
+    #10=TEXT
+    #10.value=TRFDZHUGZCFXDSFCVHGTDDCVJHUBGTFDRFCVJH
 
-    .tx-sraquotes table {
-        border-collapse:separate;
-        border-spacing:10px;
-    }
-
-    .tx-sraquotes table th {
-        font-weight:bold;
-    }
-
-    .tx-sraquotes table td {
-        vertical-align:top;
-    }
-
-    .typo3-messages .message-error {
-        color:red;
-    }
-
-    .typo3-messages .message-ok {
-        color:green;
-    }
-)
+    10 = USER
+    10.userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    10.extensionName= Sraquotes
+    10.pluginName = Plstraquotes
+    10.vendorName = mwreg
+}

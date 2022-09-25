@@ -9,6 +9,10 @@
             <f:for each="{quotes}" as="quote">
                 <f:render partial="SingleQuote" arguments="{quote:quote}" />
             </f:for>
+            <button id="next-quote-btn" class="btn btn-light btn-sm">
+                <i class="fas fa-spinner fa-pulse" id="next-quote-btn-spinner"></i>
+                <span id="next-quote-btn-text">Hole dir ein neues Zitat</span>
+            </button>
         </f:then>
 
         <f:else>
