@@ -3,3 +3,6 @@
 
 # cat=basic/enable; type=int+; label=Number of quotes : Set the number of quotes to be displayed. If the number is greater than 1, a carousel is displayed. If the Quantity is greater than 40, all quotes will be loaded. Be careful, the number of quotes affects the performance.
 quoteQuantity = 1
+
+# cat=basic/enable; type=boolean; label=Enable "get next quote button" : If enabled, a "get next quote" button will be displayed if a single quote is displayed.
+quoteNextQuoteBtn = 1

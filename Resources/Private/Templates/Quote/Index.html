@@ -1,6 +1,5 @@
 <f:layout name="Default" />
 
-
 <f:section name="content">
 
     <f:comment>Check if we received quotes. If we don't receive any quotes, we alert a message</f:comment>
@@ -10,10 +9,15 @@
                 <f:render partial="SingleQuote" arguments="{quote:quote}" />
             </f:for>
 
-            <button id="next-quote-btn" class="btn btn-light btn-sm">
-                <i class="fas fa-spinner fa-pulse" id="next-quote-btn-spinner"></i>
-                <span id="next-quote-btn-text">Hole dir ein neues Zitat</span>
-            </button>
+            <f:comment>Enable "get next quote" button based on extension configuration</f:comment>
+            <f:if condition="{extConfig.quoteNextQuoteBtn}">
+                <f:then>
+                    <button id="next-quote-btn" class="btn btn-light btn-sm">
+                        <i class="fas fa-spinner fa-pulse" id="next-quote-btn-spinner"></i>
+                        <span id="next-quote-btn-text">Hole dir ein neues Zitat</span>
+                    </button>
+                </f:then>
+            </f:if>
         </f:then>
 
         <f:else if="{f:count(subject: quotes)} > 1">
