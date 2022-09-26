@@ -4,30 +4,33 @@
     <f:asset.script identifier="m2108w-fontawesome" src="https://kit.fontawesome.com/7c80ad8086.js" priority="0" type="text/javascript" />
 
     <f:comment>Extensions css file</f:comment>
-    <f:asset.css identifier="m2108w-quote-css" href="EXT:sraquotes/Resources/Public/Css/style.css" />
+
+    <f:asset.css identifier="mwreg-quote-css" href="EXT:sraquotes/Resources/Public/Css/style.css" rel="stylesheet"/>
 
     <f:comment>Extensions javascript file</f:comment>
     <f:asset.script identifier="jQuery-3-6-1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" priority="1" type="text/javascript" />
-    <f:asset.script identifier="m2108w-quote-js" src="EXT:sraquotes/Resources/Public/Js/quote.js" priority="1" type="text/javascript" />
 
-	<div class="tx-m2108w" id="quotes">
+    <f:asset.script identifier="mwreg-quote-js" src="EXT:sraquotes/Resources/Public/Js/quote.js" priority="1" type="text/javascript" />
 
-        <f:comment>Check if the API key is stored within the extension settings</f:comment>
-        <f:if condition="{extConfig.quoteApiToken} != false">
-            <f:then>
-                <f:render section="content" />
-            </f:then>
 
-            <f:else>
-                <div class="alert alert-warning">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
-                        <div>
-                            <div class="fw-bold">Kein API Token definiert</div>
-                            <div>Definieren sie ihr API Token im <code>Backend -> Settings -> Extension Configuration -> sraquotes -> Basic -> Quotes API Token.</code></div>
-                        </div>
-                </div>
-            </f:else>
-        </f:if>
-	</div>
+        <div class="tx-m2108w" id="quotes">
+
+            <f:comment>Check if the API key is stored within the extension settings</f:comment>
+            <f:if condition="{extConfig.quoteApiToken} != false">
+                <f:then>
+                    <f:render section="content" />
+                </f:then>
+
+                <f:else>
+                    <div class="alert alert-warning">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                            <div>
+                                <div class="fw-bold">Kein API Token definiert</div>
+                                <div>Definieren sie ihr API Token im <code>Backend -> Settings -> Extension Configuration -> sraquotes -> Basic -> Quotes API Token.</code></div>
+                            </div>
+                    </div>
+                </f:else>
+            </f:if>
+        </div>
 </html>

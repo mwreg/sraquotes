@@ -1,0 +1,35 @@
+.carousel{
+    overflow:visible;
+
+    .carousel-inner{
+        padding:20px 0;
+        overflow:visible;
+
+        .carousel-item{
+            overflow:visible;
+            padding-left:0!important;
+            padding-right:0!important;
+        }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next{
+        width:$borderOffsetX;
+
+        i{
+            border-radius: 50%;
+            color: $carouselControlFontColor;
+        }
+
+        &:focus,
+        &:active{
+            opacity:0.5!important;
+        }
+        &:hover{
+            opacity: 0.9!important;
+            i{
+                transform: scale(1.2);
+            }
+        }
+    }
+}

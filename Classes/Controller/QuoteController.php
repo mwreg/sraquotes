@@ -23,7 +23,7 @@ class QuoteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
-     * Get single quote from Stämpfli AG quote database, using their API.
+     * Get quotes from Stämpfli AG quote database, using their API.
      *
      * @return string|object|null|void
      */
@@ -33,7 +33,7 @@ class QuoteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $quote = new Quote;
 
         // Get single quote
-        $quote->setRandomQuotes( 1 );
+        $quote->setRandomQuotes( );
 
         // Pass quotes (containing one quote) to the template
         $this->view->assign( 'quotes' , $quote->getQuotes() );
@@ -55,23 +55,5 @@ class QuoteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $quote->setRandomQuotes( 1 );
 
         return json_encode($quote->getQuotes()) ;
-    }
-
-    /**
-     * Get multiple quotes from Stämpfli AG quote database, using their API.
-     *
-     * @return string|object|null|void
-     */
-    public function multipleQuotesAction()
-    {
-        // Create new quote object
-        $quote = new Quote;
-
-        // Get multiple quotes
-        $quote->setRandomQuotes( 3 );
-
-        // Pass quotes to the template
-        $this->view->assign( 'quotes' , $quote->getQuotes() );
-        $this->view->assign( 'extConfig' , $quote->getExtensionConfiguration() );
     }
 }

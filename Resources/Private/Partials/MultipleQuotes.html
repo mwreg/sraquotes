@@ -1,0 +1,18 @@
+<div id="carouselExampleControls" class="carousel carousel-dark carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <f:for each="{quotes}" as="quote" iteration="iterator">
+            <div class="carousel-item {f:if(condition: '{iterator.isFirst}', then: 'active', else: '')}">
+                <f:render partial="SingleQuote" arguments="{quote:quote}" />
+            </div>
+        </f:for>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <i class="fas fa-chevron-circle-left"></i>
+        <!--<span class="carousel-control-prev-icon" aria-hidden="true" title="Vorheriges Zitat"></span>-->
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <i class="fas fa-chevron-circle-right"></i>
+        <!--<span class="carousel-control-next-icon" aria-hidden="true" title="Nächstes Zitat"></span>-->
+    </button>
+</div>

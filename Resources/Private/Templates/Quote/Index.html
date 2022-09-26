@@ -4,16 +4,21 @@
 <f:section name="content">
 
     <f:comment>Check if we received quotes. If we don't receive any quotes, we alert a message</f:comment>
-    <f:if condition="{f:count(subject: quotes)} > 0">
+    <f:if condition="{f:count(subject: quotes)} == 1">
         <f:then>
             <f:for each="{quotes}" as="quote">
                 <f:render partial="SingleQuote" arguments="{quote:quote}" />
             </f:for>
+
             <button id="next-quote-btn" class="btn btn-light btn-sm">
                 <i class="fas fa-spinner fa-pulse" id="next-quote-btn-spinner"></i>
                 <span id="next-quote-btn-text">Hole dir ein neues Zitat</span>
             </button>
         </f:then>
+
+        <f:else if="{f:count(subject: quotes)} > 1">
+            <f:render partial="MultipleQuotes" arguments="{quotes:quotes}" />
+        </f:else>
 
         <f:else>
             <div class="alert alert-info">

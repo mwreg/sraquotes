@@ -116,6 +116,15 @@ class Quote extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
+     * Get the quantity of quotes to be displayed from the extension settings
+     * @return int
+     */
+    private function getQuoteQuantity()
+    {
+        return (array_key_exists( 'quoteQuantity' , $this->extConfig) && !empty($this->extConfig['quoteQuantity']) )? $this->extConfig['quoteQuantity'] : 1 ;
+    }
+
+    /**
      * Executes the request to the API
      *
      * @param string $endpoint The API endpoint
@@ -303,10 +312,17 @@ class Quote extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * This is done from a performance point of view: if we have a small number of requested quotes,
      * the performance is faster with several single requests than if we request all citations at once.
      *
-     * @param int $quantity Number of quotes to get
+     * @param int|null $quantity Number of quotes to get. This will override the extension settings
      */
-    public function setRandomQuotes( int $quantity = 1)
+    public function setRandomQuotes( int $quantity = null)
     {
+        // If quantity is not set on method call, we get it from the extension settings
+        if ( !$quantity )
+        {
+            $quantity = intval( $this->getQuoteQuantity() );
+        }
+
+        // If quantity is greater than the maximum number of single quotes, we get all quotes
         if( $quantity <= $this->maximumNumberOfSingleRequests )
         {
             $this->setRandomQuotesByRequests( $quantity );

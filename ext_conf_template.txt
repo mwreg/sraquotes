@@ -1,2 +1,5 @@
 # cat=basic/enable; type=string; label=Quotes API Token : You have to enter the Stämpfli quote api Token here. You can get it from https://remoteassessment.staempflidev.com/user/api-tokens.
   quoteApiToken =
+
+# cat=basic/enable; type=int+; label=Number of quotes : Set the number of quotes to be displayed. If the number is greater than 1, a carousel is displayed. If the Quantity is greater than 40, all quotes will be loaded. Be careful, the number of quotes affects the performance.
+quoteQuantity = 1

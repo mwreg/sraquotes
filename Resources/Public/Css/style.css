@@ -1,3 +1,52 @@
+/******************
+ *     Colors     *
+******************/
+/* Quote category */
+/***************************
+ *     Carousel Style      *
+***************************/
+/************************
+ *     Quote Style      *
+*************************/
+/* Quote outer wrapper*/
+/* Quotation mark */
+/* Quote border */
+/* Quote */
+.carousel {
+  overflow: visible;
+}
+.carousel .carousel-inner {
+  padding: 20px 0;
+  overflow: visible;
+}
+.carousel .carousel-inner .carousel-item {
+  overflow: visible;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+  width: 36px;
+}
+.carousel .carousel-control-prev i,
+.carousel .carousel-control-next i {
+  border-radius: 50%;
+  color: white;
+}
+.carousel .carousel-control-prev:focus, .carousel .carousel-control-prev:active,
+.carousel .carousel-control-next:focus,
+.carousel .carousel-control-next:active {
+  opacity: 0.5 !important;
+}
+.carousel .carousel-control-prev:hover,
+.carousel .carousel-control-next:hover {
+  opacity: 0.9 !important;
+}
+.carousel .carousel-control-prev:hover i,
+.carousel .carousel-control-next:hover i {
+  transform: scale(1.2);
+}
+
 html, body {
   position: relative;
   /*background-color:$darkGray;*/
@@ -14,17 +63,6 @@ body, * {
   position: relative;
 }
 
-/******************
- *     Colors     *
-******************/
-/* Quote category */
-/******************
- *     Style      *
-******************/
-/* Quote outer wrapper*/
-/* Quotation mark */
-/* Quote border */
-/* Quote */
 #quotes {
   display: flex;
   flex-direction: column;
